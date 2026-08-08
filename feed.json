@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "slug": "temp-test-entry",
+    "title": "Temporary test entry, remove me",
+    "url": "https://example.com/test",
+    "summary": "Verifies the site renders entries fetched from the jdeffner-feed repo, thumbnail included.",
+    "tags": ["test"],
+    "thumb": "thumbs/temp-test-entry.jpg",
+    "added": "2026-08-08"
+  }
+]
