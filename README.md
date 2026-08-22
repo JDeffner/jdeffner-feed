@@ -37,3 +37,13 @@ The `/feed` skill (in `~/.claude/skills/feed/`) does the whole thing:
 extract metadata from a URL, write the entry, download the thumbnail,
 push. By hand: edit `feed.json`, drop the image in `thumbs/`, push to
 `main`. The site picks it up within about five minutes.
+
+## Validation
+
+`scripts/validate-feed.mjs` checks `feed.json` against the format above:
+valid JSON, an array, the required fields, unique kebab-case slugs, tag
+and date shape, and a thumbnail file for every `thumb` path. It needs no
+dependencies, so run `node scripts/validate-feed.mjs` before a push. A
+GitHub Actions workflow runs the same check on every push to `main` and
+on pull requests, so a malformed entry turns into a red check instead of
+a broken live site.
